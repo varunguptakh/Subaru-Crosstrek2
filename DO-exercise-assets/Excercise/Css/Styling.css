@@ -1,0 +1,228 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    color: white;
+    margin-bottom: 0.5px;
+}
+
+.navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar .nav > li > a {
+    color: #fff !important;
+}
+
+/* Banner Section */
+.banner {
+    position: relative; /* Ensures the pseudo-element is positioned relative to the banner */
+    background-image: url('../../landing-page-images/wallpapers_subaru_xv_2017_5.jpg'); /* Add the path to your car image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image in the section */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 750px; /* Adjust the height of the banner as per the image size */
+    display: flex; /* Flexbox to center the content */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    flex-direction: column; /* Ensure content stacks vertically */
+    color: white; /* White text for contrast */
+    z-index: 1; /* Ensures the content remains on top of the pseudo-element */
+}
+
+.banner::before {
+    content: ''; /* Necessary to create the pseudo-element */
+    position: absolute; /* Positions the overlay over the banner */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)); /* Blackish gradient overlay */
+    z-index: -1; /* Puts the gradient behind the banner content */
+    opacity: 0.7; /* Adjust opacity for a subtle effect */
+}
+
+.banner-text {
+    font-size: 3em; /* Make the heading large */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds shadow for better contrast on light backgrounds */
+    margin-bottom: 20px;
+}
+
+.banner-paragraph{
+    font-size: 2em
+}
+
+.banner .btn-primary {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    font-size: 1.2em;
+    padding: 15px 30px;
+}
+
+
+/* Hero Section */
+.hero {
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin: 0;
+    color: black;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.hero .btn-primary {
+    background-color: #ff6600;
+    border-color: #ff6600;
+}
+
+/* Features Section */
+#features {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Make sure the cards stretch to the same height */
+    flex-wrap: wrap; /* Ensure the layout is responsive */
+}
+
+/* Styling for feature cards */
+#features .col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures all columns/cards have the same height */
+    margin-bottom: 20px; /* Space between rows */
+}
+
+/* Card Design */
+.feature-card {
+    background-color: #f8f8f8; /* Light grey background for the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* 3D shadow effect */
+    padding: 30px; /* Add padding inside the card */
+    width: 100%; /* Make the card take up full width of its parent */
+    max-width: 320px; /* Set a max width to keep card dimensions consistent */
+    min-height: 250px; /* Set a minimum height to ensure equal height */
+    display: flex;
+    flex-direction: column; /* Ensure the content inside the card is stacked */
+    justify-content: space-between; /* Distribute content evenly inside the card */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.feature-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1.1em;
+    color: #666; /* Lighter color for the text */
+    margin-bottom: auto; /* Pushes the paragraph content upwards */
+}
+
+/* Hover effect for cards */
+.feature-card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+
+/* Gallery Section */
+#gallery {
+    padding: 50px 0;
+}
+
+#gallery img {
+    margin-bottom: 20px;
+    height: auto;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+/* Contact Section */
+#contact {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #f7f7f7;
+}
+
+#contact h2 {
+    margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+/* Modal for Gallery Images */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #ff6600;
+    cursor: pointer;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #ff6600;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#backToTopBtn:hover {
+    background-color: #333;
+}
